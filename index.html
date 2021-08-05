@@ -39,6 +39,31 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <hr>
           
           <p class="w3-large w3-text-theme"><b>Links</b></p>
+
+            <!-- Search bar -->
+            <form id="search-form">
+              <p><input class="searchbox" id="search-pages" type="search" placeholder="Search for a page">
+                <button class="button" id="search-button" type="submit">Submit</button>
+            </p>
+
+            <!-- End Search Bar -->
+            </form>
+            <script>
+              const f = document.getElementById('search-form');
+              const q = document.getElementById('search-pages');
+              const google = 'https://www.google.com/search?q=site%3A+';
+              const site = 'danfheap.github.io';
+
+              function submitted(event) {
+                event.preventDefault();
+                const url = google + site + '+' + q.value;
+                const win = window.open(url, '_blank');
+                win.focus();
+              }
+
+              f.addEventListener('submit', submitted);
+            </script>
+          <p><a class="link" id="homepage-link" href="https://danfheap.github.io">Homepage</a></p>
           <p><a class="link" id="resume-link" href="https://danfheap.github.io/resume.html">Resume</a></p>
       <p><a class="link" href="https://www.w3schools.com">Buttons/Dropdowns</a></p>
         </div>
